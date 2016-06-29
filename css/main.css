@@ -810,10 +810,10 @@ header {
 }
 
 .helpers .lang a {
-    width: 16px;
-    height: 11px;
+    width: 23px;
+    height: 15px;
     display: block;
-    background: url(images/icons.png) no-repeat
+    background: url(images/flag-sprite.png) no-repeat
 }
 
 .helpers .lang a.en {
