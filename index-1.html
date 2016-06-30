@@ -60,35 +60,150 @@
         </div>
     </div>
     <div class="main-search">
-        <p>Аренда уютных вилл и апартаментов в Испании</p>
-        <form class="search-tab">
-            <div class="form-block col-2" id="place-wrapper">
-                <input type="text" placeholder="В какой город вы едете?" name="city" id="place" />
-            </div>
-            <div class="form-block col-1" id="date-from-wrapper">
-                <input type="text" placeholder="Прибытие"  name="date-from" id="date-from" />
-            </div>
-            <div class="form-block col-1" id="date-to-wrapper">
-                <input type="text" placeholder="Выезд" disabled name="date-to" id="date-to" />
-            </div>
-            <div class="form-block col-1" id="guests-wrapper" style="height: 200px">
-                <select name="guests" id="guests">
-                    <option value="1">1 гость</option>
-                    <option value="2">2 гостя</option>
-                    <option value="3">3 гостя</option>
-                    <option value="4">4 гостя</option>
-                    <option value="5">5 гостей</option>
-                    <option value="6">6 гостей</option>
-                    <option value="7">7 гостей</option>
-                    <option value="8">8 гостей</option>
-                    <option value="9">9 гостей</option>
-                    <option value="10">10 гостей</option>
-                    <option value="11">11 гостей</option>
-                    <option value="12">12 гостей</option>
-                </select>
-            </div>
-            <button type="submit" class="btn">Искать виллы</button>
-        </form>
+        <div class="main-search-wrap">
+            <p>Аренда уютных вилл и апартаментов в Испании</p>
+            <form class="search-tab">
+                <div class="form-row">
+                    <div class="form-box w25" >
+                        <div  id="date-from-wrapper">
+                            <input type="text" placeholder="Дата заезда"  name="date-from" id="date-from" />
+                        </div>
+                    </div>
+                    <div class="form-box w25" >
+                        <div id="date-to-wrapper">
+                            <input type="text" placeholder="Дата выезда" disabled name="date-to" id="date-to" />
+                        </div>
+                    </div>
+                    <div class="form-box w35" >
+                        <div class="selectius" >
+                            <select name="guests" id="guests">
+                                <option value="1">1 взрослый</option>
+                                <option value="2">2 взрослых</option>
+                                <option value="3">3 взрослых</option>
+                                <option value="4">4 взрослых</option>
+                                <option value="5">5 взрослых</option>
+                                <option value="6">6 взрослых</option>
+                                <option value="7">7 взрослых</option>
+                                <option value="8">8 взрослых</option>
+                                <option value="9">9 взрослых</option>
+                                <option value="10">10 взрослых</option>
+                                <option value="11">11 взрослых</option>
+                                <option value="12">12 взрослых</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box w25" >
+                        <div class="selectius"  >
+                            <select name="children" id="children" >
+                                <option value="0">без детей</option>
+                                <option value="1">1 ребенок</option>
+                                <option value="2">2 детей</option>
+                                <option value="3">3 детей</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-box w50" >
+                        <div class="title-form">Пакет услуг</div>
+                        <div class="selectius">
+                            <select name="services" id="services">
+                                <option value="1">Завтрак включён</option>
+                                <option value="2">Всё включено
+                                </option>
+                                <option value="3">Лечебный пакет (завтрак + лечение)
+                                </option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-box w15 child01" >
+                        <div class="title-form">Возраст ребёнка</div>
+                        <div class="selectius">
+                            <select name="child01" id="child01">
+                                <option value="1">0 лет</option>
+                                <option value="1">1 лет</option>
+                                <option value="1">2 лет</option>
+                                <option value="1">3 лет</option>
+                                <option value="1">4 лет</option>
+                                <option value="1">5 лет</option>
+                                <option value="1">6 лет</option>
+                                <option value="1">7 лет</option>
+                                <option value="1">8 лет</option>
+                                <option value="1">10 лет</option>
+                                <option value="1">11 лет</option>
+                                <option value="1">12 лет</option>
+                                <option value="1">13 лет</option>
+                                <option value="1">14 лет</option>
+                                <option value="1">15 лет</option>
+                                <option value="1">16 лет</option>
+                                <option value="1">17 лет</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box w15 child02" >
+                        <div class="selectius">
+                            <select name="child02" id="child02">
+                                <option value="1">0 лет</option>
+                                <option value="1">1 лет</option>
+                                <option value="1">2 лет</option>
+                                <option value="1">3 лет</option>
+                                <option value="1">4 лет</option>
+                                <option value="1">5 лет</option>
+                                <option value="1">6 лет</option>
+                                <option value="1">7 лет</option>
+                                <option value="1">8 лет</option>
+                                <option value="1">10 лет</option>
+                                <option value="1">11 лет</option>
+                                <option value="1">12 лет</option>
+                                <option value="1">13 лет</option>
+                                <option value="1">14 лет</option>
+                                <option value="1">15 лет</option>
+                                <option value="1">16 лет</option>
+                                <option value="1">17 лет</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box w15 child03" >
+                        <div class="selectius">
+                            <select name="child03" id="child03">
+                                <option value="1">0 лет</option>
+                                <option value="1">1 лет</option>
+                                <option value="1">2 лет</option>
+                                <option value="1">3 лет</option>
+                                <option value="1">4 лет</option>
+                                <option value="1">5 лет</option>
+                                <option value="1">6 лет</option>
+                                <option value="1">7 лет</option>
+                                <option value="1">8 лет</option>
+                                <option value="1">10 лет</option>
+                                <option value="1">11 лет</option>
+                                <option value="1">12 лет</option>
+                                <option value="1">13 лет</option>
+                                <option value="1">14 лет</option>
+                                <option value="1">15 лет</option>
+                                <option value="1">16 лет</option>
+                                <option value="1">17 лет</option>
+
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="form-row">
+                    <div class="form-box w50" >
+                        <button type="submit" class="btn">смотреть варианты</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
     <i class="scroll-tab"></i>
 </header>

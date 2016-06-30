@@ -99,9 +99,21 @@ $(document).ready(function() {
     });
 
     // Custom Select
-    $('#guests').selectmenu({
-        appendTo: '#guests-wrapper'
+    $('.selectius select').each(function () {
+        var wraper = $(this).parent();
+        $(this).selectmenu({
+            appendTo: wraper
+        });
+        if($(this).attr('id') == 'children'){
+
+            $(document).on('change','#children', function(){
+                console.log(this);
+            })
+        }
+
     });
+
+
 
     // Datepicker
     var minDays = 7;
@@ -111,20 +123,24 @@ $(document).ready(function() {
       numberOfMonths: 2,
       minDate: 0,
       onClose: function date() {
-        var date1 = $('#date-from').datepicker('getDate');
-        var tod = new Date();
-        var start = new Date(date1);
-        var end = new Date(date1.setDate(date1.getDate() + minDays));
-        var diff = Math.round((start-tod)/(1000*60*60*24)) + 1 + Math.round((end-start)/(1000*60*60*24));
-        $('#date-to').removeAttr('disabled').datepicker({
-          minDate: diff,
-          dateFormat: 'dd.mm.yy',
-          numberOfMonths: 2,
-          onClose: function () {
-            days();
+          if($('#date-from').datepicker('getDate')) {
+              $('#date-to').removeClass('hasDatepicker');
+                var date1 = $('#date-from').datepicker('getDate');
+                var tod = new Date();
+                var start = new Date(date1);
+
+                var end = new Date(date1.setDate(date1.getDate() + minDays));
+                var diff = Math.round((start - tod) / (1000 * 60 * 60 * 24)) + 1 + Math.round((end - start) / (1000 * 60 * 60 * 24));
+                $('#date-to').removeAttr('disabled').datepicker({
+                    minDate: diff,
+                    dateFormat: 'dd.mm.yy',
+                    numberOfMonths: 2,
+                    onClose: function () {
+                        days();
+                    }
+                });
+                $('#date-to').val('');
           }
-        });
-        $('#date-to').val('');
         return false;
       }
     });
@@ -148,4 +164,30 @@ $(document).ready(function() {
             });
         });
     }
+
 });
+
+function showSelectForChildAge(){
+    var val = $('#children').val();
+    switch(val) {
+        case 0:
+            break;
+        case 1:
+            $('.child01').addClass('show-select');
+            $('.child02').removeClass('show-select');
+            $('.child03').removeClass('show-select');
+            break;
+        case 2:
+            $('.child01').addClass('show-select');
+            $('.child02').addClass('show-select');
+            $('.child03').removeClass('show-select');
+            break;
+        case 3:
+            $('.child01').addClass('show-select');
+            $('.child02').addClass('show-select');
+            $('.child03').addClass('show-select');
+            break;
+        default:
+            return false;
+    }
+}
