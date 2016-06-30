@@ -23,7 +23,8 @@
     <!-->
     <script src="/js/libs/jquery-2.1.4.min.js"></script>
     <!--<![endif]-->
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+
 </head>
 
 <body class="page-direction">
@@ -93,7 +94,7 @@
         font-family:Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:18px; padding-top:50px">
                 <p>Мы находимся по адресу: г. Москва, ул. Муравская 18/3.<br />Телефон для связи: +7 (968) 935-76-69<br />E-mail для связи: hello (at) revago.ru</p>
     <p><h3>Форма обратной связи</h3>
-    <div class="container">
+    <div class="container maper-wraper">
         <section class="contact-form">
             <div class="container">
                 <form class="search-tab" method="post" action="http://revago.sotape.com/form/contact" name="contact">
@@ -119,14 +120,7 @@
         </section>
         <div id="map-contacts"></div>
     </div>
-<style type="text/css">
-    #map-contacts{
-        width: 50%;
-    }
-</style>
-<script type="text/javascript">
 
-</script>
 
 
 
@@ -238,7 +232,53 @@
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/direction.js"></script>
-<link rel="stylesheet" type="text/css" href="http://revago.sotape.com/_debugbar/assets/stylesheets?1453465343">
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+    var cordX= 55.859617;
+    var cordY= 37.362999;
+
+    </script>
+
+    <script type="text/javascript">
+        function contactsMapInit(mapWrap){
+                if($('#'+mapWrap).length>0){
+                function initialize() {
+                    var myLatlng = new google.maps.LatLng(cordX,cordY);
+                    var myOptions = {
+                        zoom: 16,
+                        center: myLatlng,
+                        disableDefaultUI: true,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+                    }
+                    var map = new google.maps.Map(document.getElementById(mapWrap), myOptions);
+
+                    var image = 'css/images/contact-map-point.png';   // иконка картинкой
+
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        animation: google.maps.Animation.DROP, // анимация при загрузке карты
+                        icon: image //  иконка картинкой
+                    });
+
+                }
+
+                initialize();
+            }
+
+        };
+
+    // /contact map init
+
+
+    $(document).ready(function(){
+
+        contactsMapInit('map-contacts');
+
+    });
+</script>
+<!--<link rel="stylesheet" type="text/css" href="http://revago.sotape.com/_debugbar/assets/stylesheets?1453465343">
 <script type="text/javascript" src="http://revago.sotape.com/_debugbar/assets/javascript?1453465343"></script>
 <script type="text/javascript">jQuery.noConflict(true);</script>
 <script type="text/javascript">
@@ -280,6 +320,6 @@ phpdebugbar.ajaxHandler.bindToXHR();
 phpdebugbar.setOpenHandler(new PhpDebugBar.OpenHandler({"url":"http:\/\/revago.sotape.com\/_debugbar\/open"}));
 phpdebugbar.addDataSet({"__meta":{"id":"e132cdb9130a4c4558f04663a7df12c0","datetime":"2016-04-07 08:27:08","utime":1460017628.8553,"method":"GET","uri":"\/contact.html","ip":"178.216.76.105"},"php":{"version":"5.4.45","interface":"cgi-fcgi"},"messages":{"count":0,"messages":[]},"time":{"start":1460017628.3473,"end":1460017628.8553,"duration":0.50797605514526,"duration_str":"507.98ms","measures":[{"label":"Booting","start":1460017628.3473,"relative_start":0,"end":1460017628.6942,"relative_end":1460017628.6942,"duration":0.34685397148132,"duration_str":"346.85ms","params":[],"collector":null},{"label":"Application","start":1460017628.6338,"relative_start":0.28642416000366,"end":1460017628.8553,"relative_end":4.0531158447266e-6,"duration":0.22155594825745,"duration_str":"221.56ms","params":[],"collector":null}]},"memory":{"peak_usage":15728640,"peak_usage_str":"15MB"},"exceptions":{"count":0,"exceptions":[]},"views":{"nb_templates":7,"templates":[{"name":"modules.content.clear (resources\/views\/revago\/modules\/content\/clear.blade.php)","param_count":2,"params":["item","metadata"],"type":"blade"},{"name":"forms.contact (resources\/views\/revago\/forms\/contact.blade.php)","param_count":1,"params":["form"],"type":"blade"},{"name":"layout-direction-clear (resources\/views\/revago\/layout-direction-clear.blade.php)","param_count":7,"params":["obLevel","__env","app","errors","item","metadata","text"],"type":"blade"},{"name":"modules.menu.rvg_top_menu (resources\/views\/revago\/modules\/menu\/rvg_top_menu.blade.php)","param_count":2,"params":["items","parent"],"type":"blade"},{"name":"partials.helpers (resources\/views\/revago\/partials\/helpers.blade.php)","param_count":9,"params":["obLevel","__env","app","errors","item","metadata","text","edit_modules","set_currency"],"type":"blade"},{"name":"modules.menu (resources\/views\/revago\/modules\/menu.blade.php)","param_count":2,"params":["items","parent"],"type":"blade"},{"name":"modules.menu (resources\/views\/revago\/modules\/menu.blade.php)","param_count":2,"params":["items","parent"],"type":"blade"}]},"route":{"uri":"GET {alias}","uses":"Closure {#147\n  reflection: \"\"\"\n    \/**\\n\n     * \u041f\u0443\u0431\u043b\u0438\u0447\u043d\u0430\u044f \u0447\u0430\u0441\u0442\u044c, \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446 \u0438 \u0442.\u0434.\\n\n     *\/\\n\n    Closure [ <user> public method {closure} ] {\\n\n      @@ \/var\/www\/revago\/data\/www\/app\/Http\/routes.php 54 - 107\\n\n    \\n\n      - Parameters [1] {\\n\n        Parameter #0 [ <required> $alias ]\\n\n      }\\n\n    }\\n\n    \"\"\"\n}","namespace":"App\\Http\\Controllers","prefix":null,"where":[],"file":"app\/Http\/routes.php:54-107"},"queries":{"nb_statements":14,"nb_failed_statements":0,"accumulated_duration":0.00421,"accumulated_duration_str":"4.21ms","statements":[{"sql":"select * from `menus` where `alias` = 'contact.html' limit 1","params":{"0":"contact.html","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00028,"duration_str":"280\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `lft` <= '29' and `rgt` >= '30' and `id` != '72' order by `menus`.`lft` asc","params":{"0":"29","1":"30","2":"72","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/>The <code>!=<\/code> operator is not standard. Use the <code>&lt;&gt;<\/code> operator to test for inequality instead."},"duration":0.00021,"duration_str":"210\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `content` where `content`.`id` = '41' limit 1","params":{"0":"41","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00015,"duration_str":"150\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `modules` where `name` = '\u0412\u0435\u0440\u0445\u043d\u0435\u0435 \u043c\u0435\u043d\u044e' limit 1","params":{"0":"\u0412\u0435\u0440\u0445\u043d\u0435\u0435 \u043c\u0435\u043d\u044e","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00036,"duration_str":"360\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `menus`.`id` = '30' limit 1","params":{"0":"30","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00032,"duration_str":"320\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `lft` >= '2' and `lft` < '11' and `id` != '30' order by `menus`.`lft` asc","params":{"0":"2","1":"11","2":"30","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/>The <code>!=<\/code> operator is not standard. Use the <code>&lt;&gt;<\/code> operator to test for inequality instead."},"duration":0.00044,"duration_str":"440\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `include_area` where `name` = 'contact_phone' limit 1","params":{"0":"contact_phone","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.0003,"duration_str":"300\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `modules` where `name` = '\u041d\u0438\u0436\u043d\u0435\u0435 \u043c\u0435\u043d\u044e 1' limit 1","params":{"0":"\u041d\u0438\u0436\u043d\u0435\u0435 \u043c\u0435\u043d\u044e 1","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00028,"duration_str":"280\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `menus`.`id` = '63' limit 1","params":{"0":"63","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.0003,"duration_str":"300\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `lft` >= '12' and `lft` < '23' and `id` != '63' order by `menus`.`lft` asc","params":{"0":"12","1":"23","2":"63","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/>The <code>!=<\/code> operator is not standard. Use the <code>&lt;&gt;<\/code> operator to test for inequality instead."},"duration":0.00043,"duration_str":"430\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `modules` where `name` = '\u041d\u0438\u0436\u043d\u0435\u0435 \u043c\u0435\u043d\u044e 2' limit 1","params":{"0":"\u041d\u0438\u0436\u043d\u0435\u0435 \u043c\u0435\u043d\u044e 2","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00026,"duration_str":"260\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `menus`.`id` = '69' limit 1","params":{"0":"69","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00023,"duration_str":"230\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `menus` where `lft` >= '24' and `lft` < '31' and `id` != '69' order by `menus`.`lft` asc","params":{"0":"24","1":"31","2":"69","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/>The <code>!=<\/code> operator is not standard. Use the <code>&lt;&gt;<\/code> operator to test for inequality instead."},"duration":0.00033,"duration_str":"330\u03bcs","stmt_id":null,"connection":"revago"},{"sql":"select * from `include_area` where `name` = 'contact_bottom' limit 1","params":{"0":"contact_bottom","hints":"Use <code>SELECT *<\/code> only if you need all columns from table<br \/><code>LIMIT<\/code> without <code>ORDER BY<\/code> causes non-deterministic results, depending on the query execution plan"},"duration":0.00032,"duration_str":"320\u03bcs","stmt_id":null,"connection":"revago"}]},"swiftmailer_mails":{"count":0,"mails":[]},"session":{"flash":"array:2 [\n  \"old\" => []\n  \"new\" => []\n]","_token":"CUp34BYnkNzPdCoSzrDHs3Bpx0giM5yXcKmm9Nxe","user_currency":"rub","PHPDEBUGBAR_STACK_DATA":"[]","_previous":"array:1 [\n  \"url\" => \"http:\/\/revago.sotape.com\/_debugbar\/assets\/stylesheets?1453465343\"\n]","captcha":"array:2 [\n  \"sensitive\" => false\n  \"key\" => \"$2y$10$bu9ASMbbBkHcaV8hJl0lYes\/PhUC6Q5r58tOEk3zVfMjjAW8vwRka\"\n]"},"request":{"format":"html","content_type":"text\/html; charset=UTF-8","status_text":"OK","status_code":"200","request_query":"array:1 [\n  \"active_menu_tree_ids\" => array:3 [\n    0 => \"72\"\n    1 => \"1\"\n    2 => \"69\"\n  ]\n]","request_request":"array:1 [\n  \"active_menu_tree_ids\" => array:3 [\n    0 => \"72\"\n    1 => \"1\"\n    2 => \"69\"\n  ]\n]","request_headers":"array:9 [\n  \"host\" => array:1 [\n    0 => \"revago.sotape.com\"\n  ]\n  \"x-forwarded-for\" => array:1 [\n    0 => \"178.216.76.105\"\n  ]\n  \"x-forwarded-proto\" => array:1 [\n    0 => \"http\"\n  ]\n  \"connection\" => array:1 [\n    0 => \"close\"\n  ]\n  \"user-agent\" => array:1 [\n    0 => \"Mozilla\/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko\/20100101 Firefox\/45.0\"\n  ]\n  \"accept\" => array:1 [\n    0 => \"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8\"\n  ]\n  \"accept-language\" => array:1 [\n    0 => \"ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3\"\n  ]\n  \"accept-encoding\" => array:1 [\n    0 => \"gzip, deflate\"\n  ]\n  \"cookie\" => array:1 [\n    0 => \"_ym_uid=1454918545971406265; laravel_session=eyJpdiI6IlpWU1N1VlVcL3JlOE1xR3NYSEhNMFwvZz09IiwidmFsdWUiOiJqNnFOcG5OTGZjbmRLRVJ2SjBzUjBWeDlCTEd6TDEyYWhKMmRFaEt5M1wvbmlsY2o3TEIrRWRkVjhOeElXbEtkN0wrdDVWRkhOYU1tUk1FcTRzZnQ4WlE9PSIsIm1hYyI6ImU5ZmViZTc3YzIzODk1YzYyY2RjZTkxMTZlOWFkYWIyMGNkNzAzZmJmODQyN2UwNjUxOGJjNmYxODVjM2FhOGUifQ%3D%3D\"\n  ]\n]","request_server":"array:37 [\n  \"REDIRECT_REDIRECT_STATUS\" => \"200\"\n  \"REDIRECT_HANDLER\" => \"application\/x-httpd-php5\"\n  \"REDIRECT_STATUS\" => \"200\"\n  \"HTTP_HOST\" => \"revago.sotape.com\"\n  \"HTTP_X_FORWARDED_FOR\" => \"178.216.76.105\"\n  \"HTTP_X_FORWARDED_PROTO\" => \"http\"\n  \"HTTP_CONNECTION\" => \"close\"\n  \"HTTP_USER_AGENT\" => \"Mozilla\/5.0 (Windows NT 6.3; WOW64; rv:45.0) Gecko\/20100101 Firefox\/45.0\"\n  \"HTTP_ACCEPT\" => \"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8\"\n  \"HTTP_ACCEPT_LANGUAGE\" => \"ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3\"\n  \"HTTP_ACCEPT_ENCODING\" => \"gzip, deflate\"\n  \"HTTP_COOKIE\" => \"_ym_uid=1454918545971406265; laravel_session=eyJpdiI6IlpWU1N1VlVcL3JlOE1xR3NYSEhNMFwvZz09IiwidmFsdWUiOiJqNnFOcG5OTGZjbmRLRVJ2SjBzUjBWeDlCTEd6TDEyYWhKMmRFaEt5M1wvbmlsY2o3TEIrRWRkVjhOeElXbEtkN0wrdDVWRkhOYU1tUk1FcTRzZnQ4WlE9PSIsIm1hYyI6ImU5ZmViZTc3YzIzODk1YzYyY2RjZTkxMTZlOWFkYWIyMGNkNzAzZmJmODQyN2UwNjUxOGJjNmYxODVjM2FhOGUifQ%3D%3D\"\n  \"PATH\" => \"\/sbin:\/usr\/sbin:\/bin:\/usr\/bin\"\n  \"SERVER_SIGNATURE\" => \"<address>Apache\/2.2.22 (@RELEASE@) Server at revago.sotape.com Port 80<\/address>\\n\"\n  \"SERVER_SOFTWARE\" => \"Apache\/2.2.22 (@RELEASE@)\"\n  \"SERVER_NAME\" => \"revago.sotape.com\"\n  \"SERVER_ADDR\" => \"127.0.0.1\"\n  \"SERVER_PORT\" => \"80\"\n  \"REMOTE_ADDR\" => \"178.216.76.105\"\n  \"DOCUMENT_ROOT\" => \"\/var\/www\/revago\/data\/www\/revago.sotape.com\"\n  \"SERVER_ADMIN\" => \"webmaster@revago.sotape.com\"\n  \"SCRIPT_FILENAME\" => \"\/var\/www\/revago\/data\/www\/revago.sotape.com\/index.php\"\n  \"REMOTE_PORT\" => \"33387\"\n  \"REDIRECT_URL\" => \"\/index.php\"\n  \"GATEWAY_INTERFACE\" => \"CGI\/1.1\"\n  \"SERVER_PROTOCOL\" => \"HTTP\/1.0\"\n  \"REQUEST_METHOD\" => \"GET\"\n  \"QUERY_STRING\" => \"\"\n  \"REQUEST_URI\" => \"\/contact.html\"\n  \"SCRIPT_NAME\" => \"\/index.php\"\n  \"ORIG_SCRIPT_FILENAME\" => \"\/var\/www\/php-bin\/revago\/php\"\n  \"ORIG_PATH_INFO\" => \"\/index.php\"\n  \"ORIG_PATH_TRANSLATED\" => \"\/var\/www\/revago\/data\/www\/revago.sotape.com\/index.php\"\n  \"ORIG_SCRIPT_NAME\" => \"\/php-bin\/php\"\n  \"PHP_SELF\" => \"\/index.php\"\n  \"REQUEST_TIME_FLOAT\" => 1460017628.3402\n  \"REQUEST_TIME\" => 1460017628\n]","request_cookies":"array:2 [\n  \"_ym_uid\" => null\n  \"laravel_session\" => \"3a345dfac865c1e3841fb50b2260190286164cb1\"\n]","response_headers":"array:5 [\n  \"cache-control\" => array:1 [\n    0 => \"private, must-revalidate\"\n  ]\n  \"date\" => array:1 [\n    0 => \"Thu, 07 Apr 2016 08:27:08 GMT\"\n  ]\n  \"content-type\" => array:1 [\n    0 => \"text\/html; charset=UTF-8\"\n  ]\n  \"pragma\" => array:1 [\n    0 => \"no-cache\"\n  ]\n  \"expires\" => array:1 [\n    0 => -1\n  ]\n]","path_info":"\/contact.html","session_attributes":"array:6 [\n  \"flash\" => array:2 [\n    \"old\" => []\n    \"new\" => []\n  ]\n  \"_token\" => \"CUp34BYnkNzPdCoSzrDHs3Bpx0giM5yXcKmm9Nxe\"\n  \"user_currency\" => \"rub\"\n  \"PHPDEBUGBAR_STACK_DATA\" => []\n  \"_previous\" => array:1 [\n    \"url\" => \"http:\/\/revago.sotape.com\/_debugbar\/assets\/stylesheets?1453465343\"\n  ]\n  \"captcha\" => array:2 [\n    \"sensitive\" => false\n    \"key\" => \"$2y$10$bu9ASMbbBkHcaV8hJl0lYes\/PhUC6Q5r58tOEk3zVfMjjAW8vwRka\"\n  ]\n]"}}, "e132cdb9130a4c4558f04663a7df12c0");
 
-</script>
+</script>-->
 </body>
 </html>

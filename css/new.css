@@ -391,7 +391,7 @@
   height: 11px;
   background: url(../css/images/event-tales.png) no-repeat left top;
   position: absolute;
-  top :-11px; 
+  top :-11px;
   left: 50%;
   margin-left: -8px;
 }
@@ -670,7 +670,7 @@ header.inner-page__header h1.h1-and-subtitle {
 
 .about-project .contact-form{
   width: 50%;
-  margin: 30px 0;
+margin: 0;
 }
 
 .about-project .contact-form .search-tab input {
@@ -904,7 +904,7 @@ color: #bababa;
     margin: 10px 0 0;
   }
 
-  
+
 }
 
 @media all and (max-width: 767px){
@@ -1187,5 +1187,20 @@ color: #bababa;
 .child02,
 .child03{ visibility: hidden; opacity: 0; transition: all 300ms;}
 .show-select{ visibility: visible; opacity: 1;}
-
-
+ #map-contacts{
+        width: 522px;
+        height: 379px;
+    }
+.maper-wraper:after,
+.maper-wraper:before{display: none;}
+.maper-wraper{display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+padding:30px 0;
+max-width: 1145px;
+justify-content: space-between;
+}
+.about-project .container{max-width: 1145px;}
+.about-project .contact-form{width: 535px;}
