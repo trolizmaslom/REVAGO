@@ -4,7 +4,7 @@
     <title>      </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" name="viewport">
-            
+
     <link rel="icon" type="image/ico" href="css/images/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -23,6 +23,7 @@
     <!-->
     <script src="/js/libs/jquery-2.1.4.min.js"></script>
     <!--<![endif]-->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 </head>
 
 <body class="page-direction">
@@ -92,30 +93,42 @@
         font-family:Avenir, Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:18px; padding-top:50px">
                 <p>Мы находимся по адресу: г. Москва, ул. Муравская 18/3.<br />Телефон для связи: +7 (968) 935-76-69<br />E-mail для связи: hello (at) revago.ru</p>
     <p><h3>Форма обратной связи</h3>
-
-    <section class="contact-form">
-        <div class="container">
-            <form class="search-tab" method="post" action="http://revago.sotape.com/form/contact" name="contact">
-                <div class="form-block__row cleara">
-                    <div class="form-block col-2" id="place-wrapper">
-                        <input class="error" type="text" placeholder="Ваше имя" name="name"/>
+    <div class="container">
+        <section class="contact-form">
+            <div class="container">
+                <form class="search-tab" method="post" action="http://revago.sotape.com/form/contact" name="contact">
+                    <div class="form-block__row cleara">
+                        <div class="form-block col-2" id="place-wrapper">
+                            <input class="error" type="text" placeholder="Ваше имя" name="name"/>
+                        </div>
+                        <div class="form-block col-2" id="place-wrapper">
+                            <input type="text" placeholder="Ваш e-mail" name="email"/>
+                        </div>
                     </div>
-                    <div class="form-block col-2" id="place-wrapper">
-                        <input type="text" placeholder="Ваш e-mail" name="email"/>
+                    <div class="form-block" id="place-wrapper">
+                        <textarea placeholder="Ваше сообщение" name="messages"></textarea>
                     </div>
-                </div>
-                <div class="form-block" id="place-wrapper">
-                    <textarea placeholder="Ваше сообщение" name="messages"></textarea>
-                </div>
 
-                <div style="text-align: center;">
+                    <div style="text-align: center;">
 
-                    <button type="submit" class="btn">Отправить</button>
-                </div>
-                <input type="hidden" name="form" value="contact">
-            </form>
-        </div>
-    </section>
+                        <button type="submit" class="btn">Отправить</button>
+                    </div>
+                    <input type="hidden" name="form" value="contact">
+                </form>
+            </div>
+        </section>
+        <div id="map-contacts"></div>
+    </div>
+<style type="text/css">
+    #map-contacts{
+        width: 50%;
+    }
+</style>
+<script type="text/javascript">
+
+</script>
+
+
 
 <link rel="stylesheet" href="/css/magnific-popup.css">
 <script src="/js/jquery.magnific-popup.min.js"></script>
