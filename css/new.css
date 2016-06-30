@@ -1171,4 +1171,21 @@ color: #bababa;
   .contact-form .search-tab .col-2{
     width: 100%!important;
   }
+
 }
+
+.form-row{  width: 100%; display: flex; justify-content:flex-start;align-items: flex-end; margin-bottom: 18px;}
+.form-box{ margin-right: 10px;}
+.form-box:first-child{ margin-left: 10px;}
+.title-form{color: #fff;font-size: 16px; margin-bottom: 15px;}
+.w15{ width: 133px;}
+.w25{width: 145px;}
+
+.w35{ width: 175px;}
+.w50{ width: 300px;}
+.child01,
+.child02,
+.child03{ visibility: hidden; opacity: 0; transition: all 300ms;}
+.show-select{ visibility: visible; opacity: 1;}
+
+

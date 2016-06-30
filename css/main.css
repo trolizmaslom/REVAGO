@@ -806,7 +806,7 @@ header {
 
 .helpers .lang li {
     float: left;
-    margin-left: 12px
+    margin-left: 15px
 }
 
 .helpers .lang a {
@@ -817,15 +817,15 @@ header {
 }
 
 .helpers .lang a.en {
-    background-position: -77px -74px
+    background-position: 0 0;
 }
 
 .helpers .lang a.es {
-    background-position: -97px -74px
+    background-position: -38px 0
 }
 
 .helpers .lang a.ru {
-    background-position: -57px -74px
+    background-position: 100% 0;
 }
 
 .helpers .lang a:hover {
@@ -918,8 +918,10 @@ header {
 .main-search {
     max-width: 950px;
     width: 100%;
+    height: 100%;
     padding: 0 15px;
-    margin: 0 auto
+    margin: 0 auto;
+
 }
 
 .main-search p {
@@ -966,10 +968,7 @@ header {
     margin-right: 1%
 }
 
-.search-tab .btn {
-    float: left;
-    width: 21%
-}
+
 
 ::-webkit-input-placeholder {
     -webkit-transition: all .3s ease-in-out 0s;
@@ -1053,11 +1052,11 @@ input:-ms-input-placeholder {
     color: #fff
 }
 
-#guests-wrapper {
+.selectius {
     position: relative
 }
 
-#guests-wrapper:after {
+.selectius:after {
     width: 0;
     height: 0;
     border: solid transparent;
@@ -1070,7 +1069,7 @@ input:-ms-input-placeholder {
     pointer-events: none
 }
 
-#guests-wrapper .ui-selectmenu-button {
+.selectius .ui-selectmenu-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1087,11 +1086,11 @@ input:-ms-input-placeholder {
     display: block
 }
 
-#guests-wrapper .ui-selectmenu-button:focus {
+.selectius .ui-selectmenu-button:focus {
     background: rgba(255, 255, 255, .4)
 }
 
-#guests-wrapper .ui-selectmenu-button .ui-selectmenu-text {
+.selectius .ui-selectmenu-button .ui-selectmenu-text {
     display: block;
     width: 100%;
     height: 100%;
@@ -1099,11 +1098,11 @@ input:-ms-input-placeholder {
     line-height: 50px
 }
 
-#guests-wrapper .ui-selectmenu-menu {
+.selectius .ui-selectmenu-menu {
     background: #fff
 }
 
-#guests-wrapper .ui-selectmenu-menu li {
+.selectius .ui-selectmenu-menu li {
     width: 100%;
     height: 50px;
     font-size: 16px;
@@ -1118,10 +1117,10 @@ input:-ms-input-placeholder {
     transition: all .5s ease-in-out 0s;
     cursor: pointer;
     padding: 0 20px;
-    color: #000
+    color: #000;
+    white-space: nowrap;
 }
-
-#guests-wrapper .ui-selectmenu-menu li:hover {
+.selectius .ui-selectmenu-menu li:hover {
     background: #f4a137;
     color: #fff
 }
