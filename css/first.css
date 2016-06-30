@@ -1,6 +1,4 @@
-header .main-search {
-  width: auto;
-}
+
 
 header #resp {
   background: rgba(0, 0, 0, 1);
@@ -34,11 +32,11 @@ footer .copy-mobile p {
   float: none;
 }
 
-@media(max-width: 1199px) {
+/* @media(max-width: 1199px) {
   header {
     height: 768px;
   }
-}
+} */
 
 @media (max-width: 991px) {
   header #resp {
@@ -64,9 +62,9 @@ footer .copy-mobile p {
     z-index: 999;
   }
 
-  header  {
+/*  header  {
     overflow-x: hidden;
-  }
+  }*/
 
   header .right-side nav ul li {
     float: none;
@@ -85,14 +83,14 @@ footer .copy-mobile p {
   footer .bottom-links ul, footer .bottom-contacts ul {
     padding-left: 20px;
   }
-  
-  .search-tab input {
-    background: rgba(0, 0, 0, 0.6);
-  }
-  
-  header .main-search form #date-from-wrapper input, header .main-search form #guests-wrapper #guests-button {
-    background: rgba(0, 0, 0, .6);
-  }
+
+/*   .search-tab input {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+header .main-search form #date-from-wrapper input, header .main-search form #guests-wrapper #guests-button {
+  background: rgba(0, 0, 0, .6);
+} */
 
   .tourist-info .one-third a, .tourist-info .two-third a {
     height: 400px;
@@ -100,7 +98,7 @@ footer .copy-mobile p {
 }
 
 @media (max-width: 768px) {
-  header .main-search {
+  /* header .main-search {
     padding-top: 100px !important;
   }
 
@@ -111,17 +109,17 @@ footer .copy-mobile p {
   header .main-search form .col-2 {
     width: 100%;
     margin-bottom: 10px;
-  }
+  } */
 
-  header .main-search form #date-from-wrapper, header .main-search form #date-to-wrapper, header .main-search form #guests-wrapper, header .main-search form .btn {
-    width: 50%;
-    padding-bottom: 10px;
-    margin: 0;
-  }
+ /*  header .main-search form #date-from-wrapper, header .main-search form #date-to-wrapper, header .main-search form #guests-wrapper, header .main-search form .btn {
+   width: 50%;
+   padding-bottom: 10px;
+   margin: 0;
+ } */
 
-  header .main-search form #date-from-wrapper input, header .main-search form #guests-wrapper #guests-button {
+  /* header .main-search form #date-from-wrapper input, header .main-search form #guests-wrapper #guests-button {
     width: 97% !important;
-  }
+  } */
 
   header .main-search form .btn {
     max-width: none;
@@ -133,20 +131,20 @@ footer .copy-mobile p {
         margin-bottom: 10px;
     }
 
-    .search-tab #date-from-wrapper, .search-tab #date-to-wrapper, .search-tab #guests-wrapper, .search-tab .btn {
-        width: 50%;
-        padding-bottom: 10px;
-        margin: 0;
-    }
+   /*  .search-tab #date-from-wrapper, .search-tab #date-to-wrapper, .search-tab #guests-wrapper, .search-tab .btn {
+       width: 50%;
+       padding-bottom: 10px;
+       margin: 0;
+   } */
 
-    .search-tab #date-from-wrapper input, .search-tab #guests-wrapper #guests-button {
+    /* .search-tab #date-from-wrapper input, .search-tab #guests-wrapper #guests-button {
         width: 97% !important;
-    }
+    } */
 
     .search-tab .btn {
         max-width: none;
     }
-  
+
   .city .small-title {
     padding-bottom: 15px;
     font-size: 28px;
@@ -194,46 +192,46 @@ footer .copy-mobile p {
   footer .bottom-contacts {
     min-width: auto;
   }
-  
+
   .tourist-info .one-third {
     width: 100%;
   }
-  
+
   .tourist-info img {
     height: auto;
   }
-  
+
   .tourist-info .two-third {
     width: 100%;
   }
-  
+
   .tourist-info .two-third a.large {
     width: 100%;
   }
-  
+
   .tourist-info .two-third a {
     width: 100%;
    }
-  
+
   .tourist-info .two-third .row {
-    margin-bottom: 0;  
+    margin-bottom: 0;
   }
-  
+
   .direction .two-block a {
     width: 100%;
   }
-  
+
   .small-title, .owner .title, .about-project .title {
     font-size: 30px;
   }
   .small-title span {
     font-size: 14px;
   }
-  
+
   .direction span {
     font-size: 16px;
   }
-  
+
   .project-wrapper {
     padding: 40px 15px;
     margin-bottom: 30px;
@@ -252,7 +250,7 @@ footer .copy-mobile p {
 @media (max-width: 550px) {
   header .right-side .tel {
     display: none;
-  }  
+  }
 
   header .main-search p {
     font-size: 28px;
@@ -289,8 +287,8 @@ footer .copy-mobile p {
   }
 }
 
-@media (max-width: 800px) and (min-width: 600px) {
+/* @media (max-width: 800px) and (min-width: 600px) {
   header .main-search  {
     padding-top: 33%!important;
   }
-}
+} */

@@ -1185,8 +1185,8 @@ color: #bababa;
 .w50{ width: 300px;}
 .child01,
 .child02,
-.child03{ visibility: hidden; opacity: 0; transition: all 300ms;}
-.show-select{ visibility: visible; opacity: 1;}
+.child03{ visibility: hidden; opacity: 0; height: 0; transition: all 300ms;}
+.show-select{ visibility: visible; opacity: 1; height: auto;}
  #map-contacts{
         width: 522px;
         height: 379px;
@@ -1204,3 +1204,43 @@ justify-content: space-between;
 }
 .about-project .container{max-width: 1145px;}
 .about-project .contact-form{width: 535px;}
+
+@media screen and (max-width: 678px) {
+    .form-box{ margin: 0; width: 100%;margin-bottom: 13px;}
+    .form-row{ justify-content: space-around; -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;}
+    .w15,
+    .w25,
+    .w35,
+    .w50{ width: 100%;}
+    .form-box:first-child {
+      margin-left: 0;
+    }
+    .scroll-tab{display: none;}
+    header .main-search{padding-top: 90px;}
+}
+.cfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+
+  /*willa*/
+.willa-gallery a span{background: rgba(196, 159, 112, .9);}
+.wrapper-calc .form-box{ margin: 0; width: 100%;margin-bottom: 13px;}
+.wrapper-calc .form-row{ justify-content: space-around; -webkit-flex-wrap: wrap;   -moz-flex-wrap: wrap;    -ms-flex-wrap: wrap;    -o-flex-wrap: wrap;    flex-wrap: wrap;}
+.wrapper-calc .w15,
+.wrapper-calc .w25,
+.wrapper-calc .w35,
+.wrapper-calc .w50{ width: 100%;}
+.wrapper-calc .form-box:first-child {      margin-left: 0;    }
+.wrapper-calc .scroll-tab{display: none;}
+.wrapper-calc .title-form{color: #000;}
+.wrapper-calc .search-tab input,
+.wrapper-calc .selectius .ui-selectmenu-button{background: #9b9b9b;}

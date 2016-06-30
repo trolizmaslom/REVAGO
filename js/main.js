@@ -12,11 +12,6 @@ function days() {
   $('#pay').empty().append("= $ " + pay);
 };
 $(document).ready(function() {
-    // Header height
-    $('header').height($(window).height());
-
-    // Search position
-    $('.main-search').css('padding-top',$('header').height() / 100 * 37);
 
     // Directions show
     $('.show-direction').click(function(){
@@ -51,7 +46,7 @@ $(document).ready(function() {
         $currency.find('span').html($(this).html());
         $currency.find('ul').removeClass('show');
     });
-   
+
     // Autocomplete field
     var availablePlaces = [
         "Аликанте",
@@ -100,15 +95,20 @@ $(document).ready(function() {
 
     // Custom Select
     $('.selectius select').each(function () {
-        var wraper = $(this).parent();
-        $(this).selectmenu({
-            appendTo: wraper
-        });
-        if($(this).attr('id') == 'children'){
 
-            $(document).on('change','#children', function(){
-                console.log(this);
-            })
+        if($(this).attr('id') == 'children'){
+            var wraper = $(this).parent();
+            $(this).selectmenu({
+                appendTo: wraper,
+                change: function( event, ui ) {
+                   showSelectForChildAge();
+                }
+            });
+        }else{
+            var wraper = $(this).parent();
+            $(this).selectmenu({
+                appendTo: wraper
+            });
         }
 
     });
@@ -168,21 +168,29 @@ $(document).ready(function() {
 });
 
 function showSelectForChildAge(){
+
     var val = $('#children').val();
+
     switch(val) {
-        case 0:
+        case "0":
+            $('.child01').removeClass('show-select');
+            $('.child02').removeClass('show-select');
+            $('.child03').removeClass('show-select');
             break;
-        case 1:
+        case "1":
+
             $('.child01').addClass('show-select');
             $('.child02').removeClass('show-select');
             $('.child03').removeClass('show-select');
             break;
-        case 2:
+        case "2":
+
             $('.child01').addClass('show-select');
             $('.child02').addClass('show-select');
             $('.child03').removeClass('show-select');
             break;
-        case 3:
+        case "3":
+
             $('.child01').addClass('show-select');
             $('.child02').addClass('show-select');
             $('.child03').addClass('show-select');

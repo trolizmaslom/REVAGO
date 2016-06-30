@@ -448,6 +448,7 @@ input, textarea {
 }
 
 .btn {
+    padding-top: 0;
     width: 100%;
     height: 50px;
     -webkit-transform: translateZ(0);
@@ -535,7 +536,8 @@ header {
     background-position: top center;
     width: 100%;
     min-height: 600px;
-    position: relative
+    position: relative;
+    height: 100vh;
 }
 
 .scroll-tab {
@@ -659,7 +661,7 @@ header {
 }
 
 .top-panel nav li a:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .top-panel .tel {
@@ -670,7 +672,7 @@ header {
 }
 
 .top-panel .tel:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .sticky.top-panel .tel {
@@ -870,11 +872,11 @@ header {
 }
 
 .helpers .currency span:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .helpers .currency span:hover:after {
-    border-top-color: #f4a137
+    border-top-color: #c49f70
 }
 
 .helpers .currency ul {
@@ -908,7 +910,7 @@ header {
 }
 
 .helpers .currency ul li.active, .helpers .currency ul li:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .helpers .currency .rubl {
@@ -917,9 +919,8 @@ header {
 
 .main-search {
     max-width: 950px;
-    width: 100%;
-    height: 100%;
-    padding: 0 15px;
+
+    padding: 250px 15px 0;
     margin: 0 auto;
 
 }
@@ -1048,7 +1049,7 @@ input:-ms-input-placeholder {
 }
 
 #place-wrapper .ui-autocomplete li:hover {
-    background: #f4a137;
+    background: #c49f70;
     color: #fff
 }
 
@@ -1121,7 +1122,7 @@ input:-ms-input-placeholder {
     white-space: nowrap;
 }
 .selectius .ui-selectmenu-menu li:hover {
-    background: #f4a137;
+    background: #c49f70;
     color: #fff
 }
 
@@ -1229,7 +1230,7 @@ input:-ms-input-placeholder {
 }
 
 .ui-datepicker-calendar td a.ui-state-active, .ui-datepicker-calendar td a:hover {
-    background: #f4a137;
+    background: #c49f70;
     color: #fff
 }
 
@@ -1302,7 +1303,7 @@ input:-ms-input-placeholder {
 }
 
 .direction a:hover span {
-    background: rgba(244, 161, 55, .9);
+    background: rgba(196, 159, 112, .9);
     height: 100%;
     padding-top: 205px;
 }
@@ -1376,7 +1377,7 @@ input:-ms-input-placeholder {
     text-align: center;
     color: #fff;
     margin-top: -30px;
-    background: rgba(244, 161, 55, .95)
+    background: rgba(196, 159, 112, .9);
 }
 
 .tourist-info a {
@@ -1442,7 +1443,8 @@ input:-ms-input-placeholder {
 .project-wrapper {
     padding: 65px 15px 165px;
     margin-bottom: 80px;
-    background: #f4a137 url(images/pattern.png) repeat-x -200px -15px
+    background-image: url(images/bg/buga.jpg);
+    background-repeat: repeat;
 }
 
 .project-info {
@@ -1478,7 +1480,7 @@ input:-ms-input-placeholder {
     -o-transition: all .3s ease-in-out 0s;
     transition: all .3s ease-in-out 0s;
     font-size: 20px;
-    color: #f4a137;
+    color: #c49f70;
     font-style: normal;
     cursor: pointer;
     border-bottom: 1px solid
@@ -1514,7 +1516,8 @@ footer {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: url(images/bg/footer.jpg) repeat-y top center;
+/*     background: url(images/bg/footer.jpg) repeat-y top center; */
+background-color: #02031f;
     min-height: 325px;
     padding-top: 65px;
     color: #fff
@@ -1545,7 +1548,7 @@ footer .container {
 }
 
 .bottom-links a:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .bottom-contacts {
@@ -1568,7 +1571,7 @@ footer .container {
 }
 
 .bottom-contacts a:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .bottom-contacts a:before {
@@ -1665,7 +1668,7 @@ footer .container {
 }
 
 .web-studio a:hover {
-    color: #f4a137
+    color: #c49f70
 }
 
 .main-gallery *{
@@ -1674,7 +1677,7 @@ footer .container {
 }
 
 .main-gallery a span {
-    background: rgba(244, 161, 55, 0.95) none repeat scroll 0 0;
+    background: rgba(196, 159, 112, .9) none repeat scroll 0 0;
     box-sizing: border-box;
     color: #fff;
     font-size: 20px;
